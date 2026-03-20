@@ -34,23 +34,23 @@ const Player = ({ songs, currentIndex, setCurrentIndex }) => {
 
   return (
     <div>
-      <h3>🎧 Now Playing</h3>
-      <h2>{currentSong.title}</h2>
-      <p>🎤 {currentSong.singer}</p>
-      <p>💿 {currentSong.album}</p>
-  
+      <h3>Now Playing</h3>
+      <h4>{currentSong.title}</h4>
+      <p>{currentSong.singer}</p>
+
       <audio
         ref={audioRef}
         src={currentSong.src}
+        controls
         onEnded={nextSong}
       />
-  
+
       <div>
-        <button onClick={prevSong}>⏮</button>
+        <button onClick={prevSong}>⏮ Previous</button>
         <button onClick={togglePlay}>
-          {isPlaying ? "⏸" : "▶"}
+          {isPlaying ? "⏸ Pause" : "▶ Play"}
         </button>
-        <button onClick={nextSong}>⏭</button>
+        <button onClick={nextSong}>⏭ Next</button>
       </div>
     </div>
   );
